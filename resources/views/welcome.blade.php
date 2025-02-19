@@ -10,10 +10,7 @@
             <div class="content" id="content">
                 <section>
                     <h1>Care and Play</h1>
-                    <div class="hiddenc">
-                        <h5>"Produktivan, egy szebb jovoert..."</h5>
-
-                    </div>
+                    <h5>"Produktivan, egy szebb jovoert..."</h5>
 
                 </section>
                 <section class="hiddenc">
@@ -42,8 +39,9 @@
                 </section>
 
                 <section>
-                    <h4>Rólunk</h4>
+
                     <div class="hiddenc">
+                        <h4>Rólunk</h4>
                         <div class="rolunk">
                             <div class="rolunkbox">
                                 <p>"Az volt az álmunk hogy segíthessünk olyanoknak akik megérdemlik azt! És
@@ -64,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hiddenc">
+                    <div class="contentright">
                         <div class="rolunk">
                             <div class="rolunkbox">
                                 <img src="{{ asset('assets/img/2 people doing business.jpg') }}"

@@ -12,7 +12,7 @@
 
 </head>
 
-<nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg " id="navnav" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="#">Care n Play</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
