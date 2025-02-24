@@ -8,21 +8,14 @@ window.onscroll = (e) => {
  }};
 
 
- function confirm(ev){
-    ev.preventDefault();
-    var urlToDirect = ev.currentTarget.getAttribute('href');
-    console.log(urlToDirect);
 
-    swal({
-        title:"Gratulálok!",
-        text:"Sikeres bejelentkezés!",
-        icon: "success",
-        buttons: true,
-        dangerMode:false
-    })
+ window.onload = function() {
+    const animatedDiv = document.getElementById('animatedDiv');
+    animatedDiv.classList.remove('hidden');
+};
 
 
-}
+ 
 
 
 

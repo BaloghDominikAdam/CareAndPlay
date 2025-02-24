@@ -3,51 +3,52 @@
     margin: 0;
     box-sizing: border-box;
     outline: 0;
+    color: white;
+}
+
+.main-block{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #0066ff, #08f, #26ab78, #08f,#0066ff);
+    backdrop-filter: blur(30px);
+    background-attachment: scroll;
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+
+
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 
 }
+
 @font-face {
     font-family: FairyDustB;
     src: url('Quenda-Medium.otf');
 
 }
 
-.home-page {
-    background-color: #eee;
-    height: 100%;
-    display: grid;
-    place-items: center;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-    z-index: 1;
-    color: white;
-
-}
 .content h1{
-    background-color: transparent;
-    font-size: 150px;
+    font-size: clamp(150px, calc(7vw + 1rem), 5rem);
     font-family: FairyDustB;
     color: white;
-    animation: typing 2s steps(13) forwards;
-    white-space: nowrap;
+    z-index: 1;
     text-shadow: 1px 0.5px 45px #eeeeee00;
-    overflow: hidden;
 }
-
-@keyframes typing {
-    from { width: 0; }
-    to   { width: 56%;  }
-  }
-
 
 
 
 .content h5{
-    font-size: 30px;
+    font-size: clamp(20px, calc(3vw + 1rem), 2rem);
     text-align: center;
     color: white;
     font-style: italic ;
@@ -69,67 +70,44 @@
     }
   }
 
-
-.content .quote {
-    color: white;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 64px;
-    padding: 10px;
-    background-color: #101010;
-    border-radius: 10px;
-}
-
-.content .by {
-    color: #00e1ff;
-}
-
-.blob-outer-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    inset: 0;
-    margin: auto;
-    filter: blur(100px);
-    opacity: 0.85;
-
-}
-
-.blob-inner-container {
-    border-radius: 99999px;
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 150vw;
-    height: 350vh;
-    min-width: 1000px;
-    background-color: #fff;
-    transform: scale(0.8);
-
-}
-
-.blob {
-
-    width: 100%;
-    height: 100%;
-    inset: 0;
-    margin: auto;
-    background: conic-gradient(from 0deg, #038654, #08f,   #266bab, #26ab78   );
-    animation: spinBlob 8s linear infinite;
-
-
-}
-
-@keyframes spinBlob {
-    0% {
-        transform: rotate(0deg) scale(2);
+  @media only screen and (max-width: 1279px){
+    .content h1{
+        font-size: clamp(110px, calc(6vw + 1rem), 5rem);
+        text-wrap: wrap;
+        text-align: center;
     }
-
-    100% {
-        transform: rotate(1turn) scale(5);
+    .content h5{
+        font-size: clamp(10px, calc(2vw + 0.5rem), 1rem);
+        text-wrap: wrap;
+        text-align: center;
     }
 }
+
+@media only screen and (max-width: 861px){
+    .content h1{
+        font-size: clamp(80px, calc(4vw + 1.7rem), 2rem);
+        text-wrap: wrap;
+        text-align: center;
+    }
+    .content h5{
+        font-size: clamp(5px, calc(1vw + 0.5rem), 1rem);
+        text-wrap: wrap;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 635px){
+    .content h1{
+        font-size: clamp(80px, calc(4vw + 1.7rem), 2rem);
+        text-wrap: balance;
+
+    }
+    .content h5{
+        font-size: clamp(5px, calc(1vw + 0.5rem), 1rem);
+        text-wrap: wrap;
+        text-align: center;
+    }
+}
+
 
 
 .navbar {
@@ -137,7 +115,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: fixed;
+        position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -187,8 +165,17 @@
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 90vh;
+    min-height: 100vh;
   }
+
+  section h2{
+    color: white;
+    font-size: clamp(40px, calc(4vw + 1.7rem), 2rem);
+    font-family: FairyDustB;
+
+
+  }
+
 
   section h4{
     font-size: 80px;
@@ -203,21 +190,6 @@
     text-shadow: 1px 0.5px 65px #eeeeee96;
 
   }
-
-  /* .hiddenc{
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
-
-  }
-
-  .showc{
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-    transition-delay: .2s;
-  } */
 
 
  @keyframes appearfromleft {
@@ -255,6 +227,9 @@
     animation: appearfromleft linear;
     animation-timeline: view();
     animation-range: entry 0 cover 30%;
+    text-align: center;
+
+
  }
  .contentright{
     animation: appearfromright linear;
@@ -277,7 +252,14 @@
 
 .logos{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85%;
+    margin: auto;
+
 }
+
+
 
 .logo img{
     width: 350px;
@@ -289,6 +271,9 @@
     filter: drop-shadow(5px 5px 25px #eeeeee96);
     transition: transform 0.3s ease
 }
+
+
+
 
 .logo img:hover{
     transform: scale(1.1);
@@ -329,6 +314,8 @@
     margin: auto;
     margin-top: 20px;
 }
+
+
 .rolunkbox{
     width: 50%;
     margin: 40px;
@@ -339,9 +326,12 @@
     height: 300px;
     border-radius: 50px;
     object-fit: cover;
-    box-shadow: 1px 1px 55px 1px #d4d4d48c;
+    box-shadow: 1px 1px 55px 1px #1a1a1a8c;
 
 }
+
+
+
 .rolunk p{
     text-align: center;
     font-size: 25px;
@@ -351,4 +341,206 @@
     animation-fill-mode: forwards;
     animation-duration: 1s;
     text-shadow: 1px 0.5px 45px #eeeeee96;
+}
+
+
+.regpage{
+    display: grid;
+    align-content: center;
+    min-height: 100vh;
+}
+.regpage h2{
+    font-size: clamp(80px, calc(3vw + 2rem), 2rem);
+    margin: auto;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    font-family: FairyDustB;
+    text-shadow: 1px 0.5px 45px #eeeeee00;
+    margin-top: 8vh;
+    animation: elotunik ease-in-out 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    overflow-wrap:break-word;
+
+
+}
+
+
+
+
+.formcard{
+    display: flex;
+    margin: auto;
+    width: 60%;
+    height: auto;
+    background-color: #c2c2c296;
+    border-radius: 45px;
+    box-shadow: 1px 1px 55px 1px #c2c2c296;
+    transition: width 2s ease;
+    margin-top: 50px;
+
+}
+
+
+
+.leftreg{
+    margin-top: 15px;
+    opacity: 0;
+    animation: elotunik ease-in-out 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+
+}
+
+.rightreg{
+    border-radius: 45px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+
+    animation: elotunik ease-in-out 1s ;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+
+}
+
+.regpage .text-center{
+    animation: elotunik ease-in-out 1s ;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+@keyframes elotunik{
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+
+    }
+}
+.leftreg button{
+    text-align: center;
+}
+
+
+.rightreg h3{
+    color: white;
+    font-size: clamp(30px, calc(1vw + .6rem), 1rem);
+    font-family: FairyDustB;
+
+}
+.righregcontent{
+    margin: auto;
+}
+
+.form-control{
+    box-shadow: 1px 1px 25px 1px #c2c2c296;
+
+}
+
+.form-label, .form-control, .btn{
+    font-family: FairyDustB;
+    font-size: clamp(18px, calc(2vw + 1rem), 1rem);
+
+}
+.form-label{
+    text-align: start;
+}
+.btn{
+    color: white;
+}
+.btn:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+.leftreg h3, p, a {
+    color: white;
+    font-size: clamp(35px, calc(1vw + .6rem), 1rem);
+    font-family: FairyDustB;
+}
+
+
+
+.row .col-md-6{
+    margin: auto;
+}
+
+.hidden{
+    width: 0;
+    height: 0;
+    overflow:hidden;
+}
+
+
+
+.content .card{
+    color: black;
+}
+
+
+
+
+@media only screen and (max-width: 1279px){
+
+    .rolunk{
+        display: grid;
+        text-align: center;
+    }
+    .rolunkbox{
+        width: 100%;
+        text-wrap: wrap;
+        padding: 45px;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    .rolunkbox img{
+        width: 95%;
+    }
+    .regpage h2{
+        font-size: clamp(60px, calc(2vw + 2rem), 2rem);
+    }
+}
+
+@media only screen and (max-width:1279px ) {
+    .logos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .hiddenc h4{
+        font-size: clamp(55px, calc(4vw + 1rem), 2rem);
+    }
+    .logo img{
+        width: 300px;
+        height: 250px;
+    }
+    .formcard {
+        margin-top: 80px;
+        margin-bottom: 80px;
+
+    }
+}
+
+@media only screen and (max-width:768px ) {
+    .logos{
+        display:block;
+    }
+    .regpage h2{
+        font-size: clamp(40px, calc(2vw + 2rem), 1rem);
+    }
+    .formcard {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width:480px ) {
+    .logos{
+        width: 100%;
+    }
 }

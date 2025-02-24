@@ -1,11 +1,16 @@
 @extends('layout')
 @section('content')
-    <main>
-        <div class="blob-outer-container">
-            <div class="blob-inner-container">
-                <div class="blob"></div>
-            </div>
-        </div>
+    <main class="main-block">
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Siker',
+                    text: '{{ session('success') }}',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+        @endif
         <div class="home-page">
             <div class="content" id="content">
                 <section>
@@ -13,29 +18,30 @@
                     <h5>"Produktivan, egy szebb jovoert..."</h5>
 
                 </section>
-                <section class="hiddenc">
-                    <h4>Partnereink</h4>
-                    <div class="logos">
-                        <div class="logo hiddenc">
-                            <img src="{{ asset('assets/img/logo1.jpg') }}" alt="logo1">
-                            <p class="company">"Carty"</p>
-                        </div>
-                        <div class="logo hiddenc">
-                            <img src="{{ asset('assets/img/logo2.jpg') }}" alt="logo2">
-                            <p class="company">"For The People"</p>
-                        </div>
-                        <div class="logo hiddenc">
-                            <img src="{{ asset('assets/img/logo3.jpg') }}" alt="logo3">
-                            <p class="company">"One For All"</p>
+                <section>
+                    <div class="hiddenc">
+                        <h4>Partnereink</h4>
+                        <div class="logos">
+                            <div class="logo hiddenc">
+                                <img src="{{ asset('assets/img/logo1.jpg') }}" alt="logo1">
+                                <p class="company">"Carty"</p>
+                            </div>
+                            <div class="logo hiddenc">
+                                <img src="{{ asset('assets/img/logo2.jpg') }}" alt="logo2">
+                                <p class="company">"For The People"</p>
+                            </div>
+                            <div class="logo hiddenc">
+                                <img src="{{ asset('assets/img/logo3.jpg') }}" alt="logo3">
+                                <p class="company">"Everyone counts"</p>
+
+                            </div>
+                            <div class="logo hiddenc">
+                                <img src="{{ asset('assets/img/logo4.jpg') }}" alt="logo4">
+                                <p class="company">"Helping Hand"</p>
+                            </div>
 
                         </div>
-                        <div class="logo hiddenc">
-                            <img src="{{ asset('assets/img/logo4.jpg') }}" alt="logo4">
-                            <p class="company">"Helping Hand"</p>
-                        </div>
-
                     </div>
-
                 </section>
 
                 <section>
@@ -48,12 +54,7 @@
                                     mi
                                     más jobb módja
                                     lenne ennek mint a segítség és a szórakozás fúziója. Ezért hoztuk létre a "Care and
-                                    Play"-t,
-                                    ahol feladatok teljesítésével pontokat szereznek a felhasználok, amik egy elért összeg
-                                    után
-                                    átváltjuk forintba és egy, a felhasználó által kiválasztott jótékonysági szövetkezet
-                                    számára
-                                    adományozunk..."</p>
+                                    Play"-t"</p>
                             </div>
                             <div class="rolunkbox">
                                 <img src="{{ asset('assets/img/create me a group people working on a project .jpg') }}"
@@ -69,7 +70,8 @@
                                     alt="2 people doing business.jpg">
                             </div>
                             <div class="rolunkbox">
-                                <p>Az első partnerünk a "Carty" volt. 2022-ben sikerült egy dinamikus kapcsolatot kiépíteni
+                                <p>Az első partnerünk a "Carty" volt. 2022-ben sikerült egy dinamikus kapcsolatot
+                                    kiépíteni
                                     velük, és közösen segítünk az embereknek azóta is töretlenül...</p>
                             </div>
 
@@ -85,6 +87,5 @@
                 </section>
             </div>
         </div>
-
     </main>
 @endsection
