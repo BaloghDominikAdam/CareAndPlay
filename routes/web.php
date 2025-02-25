@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GamesController;
 
 
 
@@ -25,4 +26,8 @@ Route::get('/logout', [UserController::class, 'Logout']);
 
 Route::get('newpass', [UserController::class, 'Newpass']);
 Route::post('newpass', [UserController::class, 'NewpassData']);
+
+
+Route::get('gamesMode', [GamesController::class ,'gamesMode']);
+
 

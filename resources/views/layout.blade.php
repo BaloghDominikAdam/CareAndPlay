@@ -27,7 +27,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="/games">Játékok</a>
+                        <a class="nav-link" href="/gamesMode">Játékok</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/profil">Profil</a>
